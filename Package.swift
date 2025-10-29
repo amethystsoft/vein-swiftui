@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "BetterSyncSwiftUI",
-            targets: ["BetterSyncSwiftUI", "BetterSyncMacros"]
+            targets: ["BetterSyncSwiftUI", "BetterSyncSwiftUIMacros"]
         ),
     ],
     dependencies: [
@@ -31,7 +31,7 @@ let package = Package(
             ]
         ),
         .macro(
-            name: "BetterSyncMacros",
+            name: "BetterSyncSwiftUIMacros",
             dependencies: [
                 .product(name: "SwiftSyntax", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),

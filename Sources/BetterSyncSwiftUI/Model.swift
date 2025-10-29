@@ -5,6 +5,6 @@ import BetterSync
 @attached(extension, conformances: PersistentModel, Sendable, ObservableObject)
 @attached(peer, names: arbitrary)
 public macro Model() = #externalMacro(
-    module: "BetterSyncMacros",
+    module: "BetterSyncSwiftUIMacros",
     type: "ModelMacro"
 )
