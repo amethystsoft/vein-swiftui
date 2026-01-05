@@ -2,7 +2,7 @@ import SwiftCompilerPlugin
 import SwiftSyntaxMacros
 
 @main
-struct BetterSyncMacrosPlugin: CompilerPlugin {
+struct VeinMacrosPlugin: CompilerPlugin {
     let providingMacros: [any Macro.Type] = [
         ModelMacro.self
     ]

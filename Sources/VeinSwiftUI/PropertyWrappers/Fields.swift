@@ -1,5 +1,5 @@
 import Foundation
-import BetterSync
+import Vein
 import SwiftUI
 
 @propertyWrapper
@@ -17,10 +17,6 @@ public final class LazyField<T: Persistable>: PersistedField, @unchecked Sendabl
     
     public var isLazy: Bool {
         true
-    }
-    
-    public static var sqliteTypeName: SQLiteTypeName {
-        T.sqliteTypeName
     }
     
     public var projectedValue: Binding<WrappedType> {
@@ -96,10 +92,6 @@ public final class Field<T: Persistable>: PersistedField, @unchecked Sendable {
     
     public var isLazy: Bool {
         false
-    }
-    
-    public static var sqliteTypeName: SQLiteTypeName {
-        T.sqliteTypeName
     }
     
     public var projectedValue: Binding<WrappedType> {

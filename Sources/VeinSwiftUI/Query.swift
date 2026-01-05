@@ -1,6 +1,6 @@
 import SwiftUI
 import Combine
-import BetterSync
+import Vein
 import os.log
 
 @MainActor
@@ -116,7 +116,7 @@ package final class QueryObserver<M: PersistentModel>: ObservableObject, @unchec
     @MainActor
     package func remove(_ model: any PersistentModel) {
         guard let model = model as? ModelType else { return }
-        results?.removeAll(where: { $0.id! == model.id! })
+        results?.removeAll(where: { $0.id == model.id })
         publishToEnclosingObserver?()
         objectWillChange.send()
     }
@@ -126,11 +126,11 @@ package final class QueryObserver<M: PersistentModel>: ObservableObject, @unchec
 extension QueryObserver: AnyQueryObserver {}
 
 public struct ContainerKey: EnvironmentKey {
-    public static let defaultValue: BetterSync.ModelContainer? = nil
+    public static let defaultValue: Vein.ModelContainer? = nil
 }
 
 extension EnvironmentValues {
-    public var modelContainer: BetterSync.ModelContainer? {
+    public var modelContainer: Vein.ModelContainer? {
         get {
             self[ContainerKey.self]
         }
@@ -147,13 +147,13 @@ extension EnvironmentValues {
     }
 }
 
-extension BetterSyncContainer {
-    public func modelContainer(_ container: BetterSync.ModelContainer) -> some View {
+extension VeinContainer {
+    public func modelContainer(_ container: Vein.ModelContainer) -> some View {
         self.environment(\.modelContainer, container)
     }
 }
 
-public struct BetterSyncContainer<Content: View>: View {
+public struct VeinContainer<Content: View>: View {
     @Environment(\.modelContainer) private var container
     @State private var isInitialized: Bool = false
     private let content: () -> Content

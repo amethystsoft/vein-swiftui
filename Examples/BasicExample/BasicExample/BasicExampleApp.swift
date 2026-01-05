@@ -1,14 +1,9 @@
-//
-//  BetterSyncSCUITestApp.swift
-//  BetterSyncSCUITest
-//
-//  Created by Mia Koring on 29.10.25.
 import SwiftUI
-import BetterSync
-import BetterSyncSwiftUI
+import Vein
+import VeinSwiftUI
 
 @main
-struct BetterSyncTestEnvironmentApp: App {
+struct VeinTestEnvironmentApp: App {
     @State var toggleQueries = false
     let modelContainer: ModelContainer
     
@@ -20,7 +15,7 @@ struct BetterSyncTestEnvironmentApp: App {
                 in: .userDomainMask
             ).first!
             
-            let dbDir = containerPath.relativePath.replacingOccurrences(of: "%20", with: " ").appending("/BetterSyncSwiftUI/BasicExample/InternalData")
+            let dbDir = containerPath.relativePath.replacingOccurrences(of: "%20", with: " ").appending("/VeinSwiftUI/BasicExample/InternalData")
             
             let dbPath = dbDir.appending("/db.sqlite3")
             print(dbDir)
@@ -47,8 +42,8 @@ struct BetterSyncTestEnvironmentApp: App {
     }
     
     var body: some Scene {
-        WindowGroup("BetterSyncTest") {
-            BetterSyncContainer {
+        WindowGroup("VeinTest") {
+            VeinContainer {
                 HStack {
                     ContentView()
                     #if !canImport(UIKit)

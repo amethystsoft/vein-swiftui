@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6A9AD722EBF7BCC00468898 /* BetterSyncSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A6A9AD712EBF7BCC00468898 /* BetterSyncSwiftUI */; };
+		A63778FD2F0C281400C47666 /* VeinSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A63778FC2F0C281400C47666 /* VeinSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6A9AD722EBF7BCC00468898 /* BetterSyncSwiftUI in Frameworks */,
+				A63778FD2F0C281400C47666 /* VeinSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 			);
 			name = BasicExample;
 			packageProductDependencies = (
-				A6A9AD712EBF7BCC00468898 /* BetterSyncSwiftUI */,
+				A63778FC2F0C281400C47666 /* VeinSwiftUI */,
 			);
 			productName = BasicExample;
 			productReference = A6A9AD622EBF7B8C00468898 /* BasicExample.app */;
@@ -102,7 +102,7 @@
 			mainGroup = A6A9AD592EBF7B8C00468898;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A6A9AD702EBF7BCC00468898 /* XCLocalSwiftPackageReference "../../../BetterSyncSwiftUI" */,
+				A63778FB2F0C281400C47666 /* XCLocalSwiftPackageReference "../../../VeinSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A6A9AD632EBF7B8C00468898 /* Products */;
@@ -366,16 +366,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		A6A9AD702EBF7BCC00468898 /* XCLocalSwiftPackageReference "../../../BetterSyncSwiftUI" */ = {
+		A63778FB2F0C281400C47666 /* XCLocalSwiftPackageReference "../../../VeinSwiftUI" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../../BetterSyncSwiftUI;
+			relativePath = ../../../VeinSwiftUI;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A6A9AD712EBF7BCC00468898 /* BetterSyncSwiftUI */ = {
+		A63778FC2F0C281400C47666 /* VeinSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = BetterSyncSwiftUI;
+			productName = VeinSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

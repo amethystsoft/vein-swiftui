@@ -1,12 +1,6 @@
-//
-//  ContentView.swift
-//  BetterSyncSCUITest
-//
-//  Created by Mia Koring on 29.10.25.
-//
 import SwiftUI
-import BetterSync
-import BetterSyncSwiftUI
+import Vein
+import VeinSwiftUI
 
 struct ContentView: View {
     @Query

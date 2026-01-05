@@ -5,17 +5,17 @@ import PackageDescription
 import CompilerPluginSupport
 
 let package = Package(
-    name: "BetterSyncSwiftUI",
+    name: "vein-swiftui",
     platforms: [.macOS(.v13), .iOS(.v16), .tvOS(.v16), .macCatalyst(.v16), .visionOS(.v1)],
     products: [
         .library(
-            name: "BetterSyncSwiftUI",
-            targets: ["BetterSyncSwiftUI", "BetterSyncSwiftUIMacros"]
+            name: "VeinSwiftUI",
+            targets: ["VeinSwiftUI", "VeinSwiftUIMacros"]
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/miakoring/BetterSync", branch: "main"),
-        //.package(name: "BetterSync", path: "../BetterSync"),
+        //.package(url: "https://github.com/miakoring/Vein", branch: "main"),
+        .package(name: "Vein", path: "../Vein"),
         .package(url: "https://github.com/swiftlang/swift-syntax.git", "600.0.0" ..< "601.0.0"),
     ],
     targets: [
@@ -23,14 +23,14 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         
         .target(
-            name: "BetterSyncSwiftUI",
+            name: "VeinSwiftUI",
             dependencies: [
-                "BetterSyncSwiftUIMacros",
-                .byName(name: "BetterSync")
+                "VeinSwiftUIMacros",
+                .byName(name: "Vein")
             ]
         ),
         .macro(
-            name: "BetterSyncSwiftUIMacros",
+            name: "VeinSwiftUIMacros",
             dependencies: [
                 .product(name: "SwiftSyntax", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
@@ -38,8 +38,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "BetterSyncSwiftUITests",
-            dependencies: ["BetterSyncSwiftUI"]
+            name: "VeinSwiftUITests",
+            dependencies: ["VeinSwiftUI"]
         ),
     ]
 )

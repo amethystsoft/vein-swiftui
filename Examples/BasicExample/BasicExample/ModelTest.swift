@@ -1,6 +1,6 @@
 import Combine
-import BetterSync
-import BetterSyncSwiftUI
+import Vein
+import VeinSwiftUI
 import Foundation
 
 typealias Test = TestSchemaV0_0_1.Test
@@ -8,7 +8,7 @@ typealias Test = TestSchemaV0_0_1.Test
 enum TestSchemaV0_0_1: VersionedSchema {
     static let version = ModelVersion(0, 0, 1)
     
-    static let models: [any BetterSync.PersistentModel.Type] = [
+    static let models: [any Vein.PersistentModel.Type] = [
         Test.self
     ]
     
@@ -39,7 +39,7 @@ enum TestSchemaV0_0_1: VersionedSchema {
     }
     
     struct TestMigration: ModelSchemaMigration {
-        func prepare(in context: BetterSync.ManagedObjectContext) async throws {
+        func prepare(in context: Vein.ManagedObjectContext) async throws {
             try await context.createSchema(Test.schema)
                 .id()
                 .field("flag", type: .bool(required: true))
@@ -56,7 +56,7 @@ enum TestMigration: SchemaMigrationPlan {
         []
     }
     
-    static var schemas: [any BetterSync.VersionedSchema.Type] {
+    static var schemas: [any Vein.VersionedSchema.Type] {
         [TestSchemaV0_0_1.self]
     }
 }
@@ -68,13 +68,13 @@ nonisolated enum Group: String, Persistable, CaseIterable {
     
     typealias PersistentRepresentation = String
     
-    static var sqliteTypeName: BetterSync.SQLiteTypeName { String.sqliteTypeName }
+    static var sqliteTypeName: Vein.SQLiteTypeName { String.sqliteTypeName }
     
-    var sqliteValue: BetterSync.SQLiteValue {
+    var sqliteValue: Vein.SQLiteValue {
         .text(rawValue)
     }
     
-    static func decode(sqliteValue: BetterSync.SQLiteValue) throws(BetterSync.MOCError) -> Group {
+    static func decode(sqliteValue: Vein.SQLiteValue) throws(Vein.MOCError) -> Group {
         guard
             case .text(let value) = sqliteValue,
             let correspondingValue = Group(rawValue: value)
