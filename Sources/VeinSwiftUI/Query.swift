@@ -147,12 +147,6 @@ extension EnvironmentValues {
     }
 }
 
-extension VeinContainer {
-    public func modelContainer(_ container: Vein.ModelContainer) -> some View {
-        self.environment(\.modelContainer, container)
-    }
-}
-
 public struct VeinContainer<Content: View>: View {
     @Environment(\.modelContainer) private var container
     @State private var isInitialized: Bool = false
@@ -178,5 +172,11 @@ public struct VeinContainer<Content: View>: View {
         } else {
             ProgressView()
         }
+    }
+}
+
+extension VeinContainer {
+    public func modelContainer(_ container: Vein.ModelContainer) -> some View {
+        self.environment(\.modelContainer, container)
     }
 }
